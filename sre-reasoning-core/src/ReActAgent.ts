@@ -81,6 +81,9 @@ export class ReActAgent {
             }
             try {
                 const result = await tool.execute(mind.action.arguments);
+                // DEBUG: Log the observation so we can see what's happening
+                console.log(`\n👀 Observation: ${result}`);
+
                 // GUIDELINE 7: Learn from Observation.
                 // Append the result to `this.memory`.
                 this.memory.push(`Observation: ${result}`);
